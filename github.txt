@@ -1,0 +1,111 @@
+git clone https://github.com/cfoale/hello-world.git
+
+~/hello-world $ ls -al
+total 24
+drwxr-xr-x  3 pi pi  4096 Apr 24 20:16 .
+drwxr-xr-x 34 pi pi 12288 Apr 24 20:16 ..
+drwxr-xr-x  8 pi pi  4096 Apr 24 20:16 .git
+-rw-r--r--  1 pi pi   102 Apr 24 20:16 README.md
+
+cd .git
+git status
+
+
+copied some files, made directories
+
+~/hello-world $ git status
+# On branch master
+# Untracked files:
+#   (use "git add <file>..." to include in what will be committed)
+#
+#	pi/
+nothing added to commit but untracked files present (use "git add" to track)
+
+git add .
+
+~/hello-world $ git status
+# On branch master
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#	new file:   pi/Mathematica/ILOCITrainingVerificationSets-Test7.nb
+#
+
+#can use git rm somefile.txt to remove...
+
+git config --global user.name "cfoale"
+
+#I did not do this, for privacy
+git config --global user.email cmfoale@...
+
+more ~/.gitconfig
+[user]
+	name = cfoale
+
+git commit -m "adding the training notebook"
+[master bcad78b] adding the training notebook
+ Committer: cfoale <pi@raspberry1.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 60980 insertions(+)
+ create mode 100644 pi/Mathematica/ILOCITrainingVerificationSets-Test7.nb
+
+#NOTE: git commit -a will commit modified files directly to staging area 
+without a call to add.  It does not add new files.
+
+git push
+Username for 'https://github.com': cfoale
+Password for 'https://cfoale@github.com': 
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (4/4), done.
+Writing objects: 100% (5/5), 1.85 MiB | 525 KiB/s, done.
+Total 5 (delta 0), reused 0 (delta 0)
+To https://github.com/cfoale/hello-world.git
+   f6b57c8..bcad78b  master -> master
+
+
+git pull
+Already up-to-date.
+
+git rm -r pi
+rm 'pi/Mathematica/ILOCITrainingVerificationSets-Test7.nb'
+
+git commit -m "removing the training file path"
+[master 7f53501] removing the training file path
+ Committer: cfoale <pi@raspberry1.(none)>
+Your name and email address were configured automatically based
+on your username and hostname. Please check that they are accurate.
+You can suppress this message by setting them explicitly:
+
+    git config --global user.name "Your Name"
+    git config --global user.email you@example.com
+
+After doing this, you may fix the identity used for this commit with:
+
+    git commit --amend --reset-author
+
+ 1 file changed, 60980 deletions(-)
+ delete mode 100644 pi/Mathematica/ILOCITrainingVerificationSets-Test7.nb
+
+git push
+Username for 'https://github.com': cfoale
+Password for 'https://cfoale@github.com': 
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 246 bytes, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/cfoale/hello-world.git
+   bcad78b..7f53501  master -> master
+
+
